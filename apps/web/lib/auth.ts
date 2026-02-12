@@ -1,2 +1,2 @@
-import { auth } from "@workspace/auth";
+import { auth } from "@faroukarar/auth";
 export { auth };

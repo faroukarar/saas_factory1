@@ -11,7 +11,8 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "better-auth": "^1.4.18"
+    "better-auth": "^1.4.18",
+    "drizzle-orm": "^0.45.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

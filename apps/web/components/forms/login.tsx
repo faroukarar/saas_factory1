@@ -1,19 +1,19 @@
-import { cn } from "@workspace/ui/lib/utils";
-import { Button } from "@workspace/ui/components/button";
+import { cn } from "@faroukarar/ui/lib/utils";
+import { Button } from "@faroukarar/ui/components/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@workspace/ui/components/card";
+} from "@faroukarar/ui/components/card";
 import {
   Field,
   FieldDescription,
   FieldGroup,
-} from "@workspace/ui/components/field";
+} from "@faroukarar/ui/components/field";
 import React from "react";
-import { authClient } from "@workspace/auth";
+import { authClient } from "@faroukarar/auth";
 
 export function LoginForm({
   className,

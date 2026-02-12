@@ -5,14 +5,13 @@
     "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "exports": {
-    ".": "./src/client.ts",
+    ".": "./src/index.ts",
     "./schema": "./src/schema/index.ts",
-    "./types": "./src/types/index.ts",
-    "./helpers": "./src/helpers.ts"
+    "./client": "./src/client.ts"
   },
   "scripts": {
-    "dev": "tsup src/client.ts --watch",
-    "build": "tsup src/client.ts",
+    "dev": "tsup src/index.ts --watch",
+    "build": "tsup src/index.ts",
     "lint": "eslint . --max-warnings 0",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
