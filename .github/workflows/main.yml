@@ -31,7 +31,7 @@ jobs:
             if [ -f "$dir/package.json" ]; then
               echo "Publishing package in $dir"
               cd $dir
-              pnpm publish --no-git-checks
+              pnpm publish --no-git-checks --registry=https://npm.pkg.github.com/
               cd -
             fi
           done
