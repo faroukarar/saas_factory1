@@ -27,15 +27,12 @@ jobs:
       - run: pnpm install
 
       - run: |
-          # إعداد ملف التعريف محلياً لضمان المصادقة
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
-
           for dir in packages/*; do
-            if [ -d "$dir" ] && [ -f "$dir/package.json" ]; then
-                echo "Publishing package in $dir"
-                # استخدم --no-git-checks لتجنب مشاكل الـ CI
-                # واستخدم --registry للتأكيد
-                pnpm publish -C "$dir" --no-git-checks --registry=https://npm.pkg.github.com/
+            if [ -f "$dir/package.json" ]; then
+              echo "Publishing package in $dir"
+              cd $dir
+              pnpm publish --no-git-checks
+              cd -
             fi
           done
         env:
