@@ -33,4 +33,4 @@ jobs:
         run: pnpm -r publish --no-git-checks --access public
         env:
           # نستخدم NODE_AUTH_TOKEN لأن setup-node مهيأ لاستخدامه
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
