@@ -28,11 +28,12 @@ jobs:
 
       - run: |
           for dir in packages/*; do
+            echo "Current Directory: $dir"
             if [ -f "$dir/package.json" ]; then
-              echo "Publishing package in $dir"
-              cd $dir
-              pnpm publish --no-git-checks
-              cd -
+                echo "Publishing package in $dir"
+                cd $dir
+                pnpm publish
+                cd -
             fi
           done
         env:
