@@ -10,30 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
+      packages: write # ضروري جداً للنشر
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: pnpm/action-setup@v4
         with:
           version: 9
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
-          registry-url: https://npm.pkg.github.com/
+          node-version: 22 # يفضل استخدام نسخة LTS مستقرة حالياً
+          registry-url: "https://npm.pkg.github.com"
           cache: "pnpm"
+          scope: "@faroukarar" # أضف الـ Scope الخاص بك هنا
 
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - run: |
-          for dir in packages/*; do
-            if [ -f "$dir/package.json" ]; then
-              echo "Publishing package in $dir"
-              cd $dir
-              pnpm publish --no-git-checks --registry=https://npm.pkg.github.com/
-              cd -
-            fi
-          done
+      - name: Publish to GitHub Packages
+        run: pnpm -r publish --no-git-checks --access public
         env:
+          # نستخدم NODE_AUTH_TOKEN لأن setup-node مهيأ لاستخدامه
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
