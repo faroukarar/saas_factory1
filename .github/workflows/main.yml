@@ -11,31 +11,17 @@ jobs:
     permissions:
       contents: read
       packages: write
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: pnpm/action-setup@v4
         with:
-          version: 10 # غيرناها لـ 10 لتطابق ملفك
-
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@faroukarar"
+          registry-url: "https://npm.pkg.github.com/"
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Configure NPM for GitHub Packages
-        run: |
-          echo "@faroukarar:registry=https://npm.pkg.github.com" > .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+      - run: pnpm install
+      - run: pnpm -r publish --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to GitHub Packages
-        run: pnpm -r publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
