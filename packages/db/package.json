@@ -1,0 +1,38 @@
+{
+  "name": "@adamararawi/db",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@adamararawi"
+  },
+  "exports": {
+    ".": "./src/client.ts",
+    "./schema": "./src/schema/index.ts",
+    "./types": "./src/types/index.ts",
+    "./helpers": "./src/helpers.ts"
+  },
+  "scripts": {
+    "dev": "tsup src/client.ts --watch",
+    "build": "tsup src/client.ts",
+    "lint": "eslint . --max-warnings 0",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "seed": "tsx src/seed.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "dotenv": "^17.2.4",
+    "drizzle-orm": "^0.45.1"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.9",
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "pnpm@10.19.0"
+}
