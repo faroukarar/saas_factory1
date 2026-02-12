@@ -1,12 +1,12 @@
 {
-  "name": "@adamararawi/ui",
+  "name": "@faroukarar/ui",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "lint": "eslint . --max-warnings 0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@adamararawi"
+    "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",

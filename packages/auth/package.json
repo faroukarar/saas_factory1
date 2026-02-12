@@ -1,11 +1,11 @@
 {
-  "name": "@adamararawi/auth",
-  "version": "1.0.0",
+  "name": "@faroukarar/auth",
+  "version": "0.0.0",
   "exports": {
     ".": "./src/index.ts"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@adamararawi"
+    "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0"

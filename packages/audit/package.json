@@ -1,11 +1,11 @@
 {
-  "name": "@adamararawi/audit",
-  "version": "1.0.0",
+  "name": "@faroukarar/audit",
+  "version": "0.0.0",
   "exports": {
     ".": "./src/index.ts"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@adamararawi"
+    "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

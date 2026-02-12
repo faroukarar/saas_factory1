@@ -1,9 +1,9 @@
 {
-  "name": "@adamararawi/eslint-config",
+  "name": "@faroukarar/eslint-config",
   "version": "0.0.0",
   "type": "module",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@adamararawi"
+    "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "exports": {
     "./base": "./base.js",

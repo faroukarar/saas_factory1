@@ -1,8 +1,8 @@
 {
-  "name": "@adamararawi/db",
-  "version": "1.0.0",
+  "name": "@faroukarar/db",
+  "version": "0.0.0",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@adamararawi"
+    "registry": "https://npm.pkg.github.com/@faroukarar"
   },
   "exports": {
     ".": "./src/client.ts",
