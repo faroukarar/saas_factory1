@@ -5,7 +5,7 @@
     ".": "./src/index.ts"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@faroukarar"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
