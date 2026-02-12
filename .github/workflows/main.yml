@@ -21,7 +21,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22 # يفضل استخدام نسخة LTS مستقرة حالياً
+          node-version: 20 # يفضل استخدام نسخة LTS مستقرة حالياً
           registry-url: "https://npm.pkg.github.com"
           cache: "pnpm"
           scope: "@faroukarar" # أضف الـ Scope الخاص بك هنا
